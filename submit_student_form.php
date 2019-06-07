@@ -12,10 +12,9 @@ if(isset($_POST['email'])) {
     $email_message = "Sineup for CNC Form details below.\n\n";
     $email_message .= "Name: ".clean_string($first_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
- $email_message .= "cncsineups@phpforms.com: ".clean_string($email_from2)."\n";
 // create email headers
 $headers = 'From: "\r\n".
-'Reply-To: '.$email_from2."\r\n" .
+'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 mail($email_to, $email_subject, $email_message, $headers);
 ?>
